@@ -1,6 +1,47 @@
 import { Navbar } from '../components/Navbar/Navbar';
 import { Footer } from '../components/Footer/Footer';
-import { ScrollVideoCanvas } from '../components/ScrollVideo/ScrollVideoCanvas';
+import { ScrollVideo } from '../components/ScrollVideo/ScrollVideo';
+import { useState, useEffect } from 'react';
+
+function TypewriterTitle({ line1, line2 }: { line1: string, line2: string }) {
+  const [displayed1, setDisplayed1] = useState('');
+  const [displayed2, setDisplayed2] = useState('');
+
+  useEffect(() => {
+    let timeoutId: number;
+    let i = 0;
+    let j = 0;
+
+    setDisplayed1('');
+    setDisplayed2('');
+
+    const typeWriter = () => {
+      if (i < line1.length) {
+        i++;
+        setDisplayed1(line1.slice(0, i));
+        timeoutId = window.setTimeout(typeWriter, 50);
+      } else if (j < line2.length) {
+        j++;
+        setDisplayed2(line2.slice(0, j));
+        timeoutId = window.setTimeout(typeWriter, 50);
+      }
+    };
+
+    // slight delay before starting to type
+    timeoutId = window.setTimeout(typeWriter, 150);
+
+    return () => window.clearTimeout(timeoutId);
+  }, [line1, line2]);
+
+  return (
+    <h1 className="about-page__hero-title">
+      {displayed1}
+      {line1.length > 0 && <br />}
+      {displayed2}
+      <span className="cursor">_</span>
+    </h1>
+  );
+}
 
 const ReactIcon = () => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -35,18 +76,31 @@ export default function AboutPage() {
       <Navbar />
 
       <div className="about-page__hero">
-        <div className="about-page__hero-canvas">
-          <ScrollVideoCanvas />
-        </div>
-        <div className="about-page__hero-overlay">
-          <h1 className="about-page__hero-title">Me conheça<br />melhor</h1>
-        </div>
+        <ScrollVideo>
+          {(progress) => {
+             let t1 = "Me chamo";
+             let t2 = "San Thiago Teixeira.";
+             if (progress >= 0.66) {
+               t1 = "E eu resolvo";
+               t2 = "o SEU problema.";
+             } else if (progress >= 0.33) {
+               t1 = "Sou engenheiro";
+               t2 = "de software.";
+             }
+             
+             return (
+               <div className="about-page__hero-overlay">
+                 <TypewriterTitle line1={t1} line2={t2} />
+               </div>
+             );
+          }}
+        </ScrollVideo>
       </div>
 
       <div className="about-page__split">
         <div className="about-page__split-top">
           <div className="container">
-            <h1 className="about-page__split-header">Sobre mim.</h1>
+            <h1 className="about-page__split-header">Desenvolvimento Web</h1>
             <div className="about-page__tech-stack">
               <div className="about-page__tech-icon"><LeafIcon /></div>
               <div className="about-page__tech-icon"><CoffeeIcon /></div>

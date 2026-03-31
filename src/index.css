@@ -1066,25 +1066,8 @@ ol {
 .about-page__hero {
   position: relative;
   width: 100%;
-  height: 100vh;
-  overflow: hidden;
+  /* Removed height constraint and overflow to allow the 400vh scrub container to function */
   background: var(--bg-primary);
-}
-
-.about-page__hero-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  z-index: 0;
-}
-
-.about-page__hero-canvas canvas {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.6;
 }
 
 .about-page__hero-overlay {
@@ -1099,13 +1082,26 @@ ol {
 }
 
 .about-page__hero-title {
-  font-family: var(--font-serif);
-  font-size: var(--fs-hero);
-  color: var(--text-heading);
+  font-family: var(--font-mono);
+  font-size: var(--fs-4xl);
+  color: var(--accent-mint);
   text-align: center;
-  font-style: italic;
-  font-weight: var(--fw-bold);
+  font-weight: 200; /* extremely thin as requested */
+  letter-spacing: -0.02em;
   text-shadow: 0 4px 20px rgba(0,0,0,0.8);
+}
+
+.about-page__hero-title .cursor {
+  animation: blink 1s step-end infinite;
+  display: inline-block;
+  font-weight: 100;
+  margin-left: 8px;
+  color: var(--accent-mint);
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
 .about-page__split {

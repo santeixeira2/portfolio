@@ -1,3 +1,5 @@
+import { Button } from '../Button/Button';
+
 export function Welcome() {
   const getTimeWord = () => {
     const hour = new Date().getHours();
@@ -27,12 +29,13 @@ export function Welcome() {
             estudos rápido, como pomodoro, listagem de categorias e afins. Dá uma
             conferida, colega!
           </p>
-          <a href="#projetos" className="welcome__cta" onClick={(e) => {
-            e.preventDefault();
-            document.querySelector('#projetos')?.scrollIntoView({ behavior: 'smooth' });
-          }}>
+          <Button 
+            href="#projetos" 
+            className="welcome__cta" 
+            smoothScrollTarget="#projetos"
+          >
             Começar
-          </a>
+          </Button>
         </div>
       </div>
     </section>
