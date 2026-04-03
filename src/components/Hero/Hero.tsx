@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import heroSculptureImg from '../../assets/images/hero-sculpture.png';
 
 export function Hero() {
+  const { t } = useTranslation();
   const [offsetY, setOffsetY] = useState(0);
 
   useEffect(() => {
@@ -22,13 +24,13 @@ export function Hero() {
       </div>
       <div className="hero__content">
         <h1 className="hero__title">
-          <span className="hero__title-line">Oi! Não vi você aí.</span>
+          <span className="hero__title-line">{t('home.hero.line1')}</span>
           <span className="hero__title-line" style={{ animationDelay: '300ms' }}>
-            Tudo bem?
+            {t('home.hero.line2')}
           </span>
         </h1>
         <p className="hero__subtitle" />
-        <p className="hero__author">San Thiago</p>
+        <p className="hero__author">{t('home.hero.author')}</p>
       </div>
     </section>
   );

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 export function Navbar() {
@@ -6,12 +7,19 @@ export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+  const { i18n } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 60);
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const languages = [
+    { code: 'pt', label: 'PT' },
+    { code: 'en', label: 'EN' },
+    { code: 'es', label: 'ES' },
+  ];
 
   const links = [
     { label: 'Página Inicial', to: '/#hero' },
@@ -65,11 +73,19 @@ export function Navbar() {
             ))}
           </div>
 
-          <button
-            className="navbar__toggle-theme"
-            aria-label="Toggle theme"
-            id="theme-toggle"
-          />
+          <div className="navbar__language-switcher font-mono-consolas">
+            {languages.map((lang, idx) => (
+              <span key={lang.code} className="lang-item">
+                <button
+                  className={`lang-btn ${i18n.language.startsWith(lang.code) ? 'active' : ''}`}
+                  onClick={() => i18n.changeLanguage(lang.code)}
+                >
+                  {lang.label}
+                </button>
+                {idx < languages.length - 1 && <span className="lang-divider">/</span>}
+              </span>
+            ))}
+          </div>
 
           <button
             className={`navbar__hamburger ${mobileOpen ? 'open' : ''}`}

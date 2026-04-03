@@ -1,12 +1,27 @@
+import { useTranslation } from 'react-i18next';
+
 export function Footer() {
+  const { t } = useTranslation();
+
   const columns = [
     {
-      title: 'Contatos',
-      links: ['Email', 'Whatsapp', 'LinkedIn', 'Github', 'Instagram'],
+      title: t('footer.columns.contacts.title'),
+      links: [
+        t('footer.columns.contacts.email'),
+        t('footer.columns.contacts.whatsapp'),
+        t('footer.columns.contacts.linkedin'),
+        t('footer.columns.contacts.github'),
+        t('footer.columns.contacts.instagram')
+      ],
     },
     {
-      title: 'Portifólio',
-      links: ['Apresentação', 'Currículo', 'Aplicações', 'Certificados'],
+      title: t('footer.columns.portfolio.title'),
+      links: [
+        t('footer.columns.portfolio.presentation'),
+        t('footer.columns.portfolio.resume'),
+        t('footer.columns.portfolio.apps'),
+        t('footer.columns.portfolio.certificates')
+      ],
     },
     {
       title: 'Projeto Minerva',
@@ -18,8 +33,8 @@ export function Footer() {
       ],
     },
     {
-      title: 'Políticas',
-      links: ['Termos de Uso'],
+      title: t('footer.columns.policies.title'),
+      links: [t('footer.columns.policies.terms')],
     },
   ];
 
@@ -44,7 +59,7 @@ export function Footer() {
         </div>
         <div className="footer__bottom">
           <p className="footer__copyright">
-            © {new Date().getFullYear()} San Thiago Teixeira — Indigo Dev
+            © {new Date().getFullYear()} San Thiago Teixeira — {t('footer.description')}
           </p>
         </div>
       </div>

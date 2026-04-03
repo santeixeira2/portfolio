@@ -1,0 +1,126 @@
+{
+  "navbar": {
+    "me_chamo": "Me chamo",
+    "san_thiago": "San Thiago Teixeira.",
+    "sou_engenheiro": "Sou engenheiro",
+    "de_software": "de software.",
+    "e_eu_resolvo": "E eu resolvo",
+    "o_seu_problema": "o SEU problema.",
+    "links": {
+      "quem_sou_eu": "quem_sou_eu.md",
+      "experiencias": "experiências.log",
+      "mobile_dev": "mobile_dev.src",
+      "web_apps": "web_apps.tsx",
+      "embedded_sys": "embedded_sys.cpp"
+    }
+  },
+  "about": {
+    "sections": {
+      "bio": {
+        "title": "Engenheiro de Software com raízes na engenharia tradicional e foco em soluções de alto impacto.",
+        "p1": "Minha trajetória começou na Engenharia, onde durante 5 anos desenvolvi o rigor analítico que hoje aplico ao desenvolvimento de software. Descobri minha verdadeira vocação na interseção entre a precisão técnica e a criação digital.",
+        "p2": "Atualmente, atuo como Engenheiro de Software na <1>Pressure Systems International</1>, focando em desenvolvimento mobile com React Native, SwiftUI e Kotlin, além de soluções full-stack com Java/Spring Boot e arquiteturas em nuvem (AWS/Azure).",
+        "p3": "Seja liderando sistemas de aeroelasticidade no projeto Avoante Aeromec ou integrando hardware e firmware na EMBRAPII, meu compromisso é com a consistência, o aprendizado contínuo e a excelência técnica."
+      },
+      "exp": {
+        "title": "Trajetória Profissional: De Sistemas Críticos a Mobile de Alta Performance.",
+        "psi": "Software Engineer — Pressure Systems International (2023-Current)",
+        "psi_desc": "Liderança técnica em desenvolvimento Mobile (React Native, SwiftUI, Kotlin) e Full-stack (Java/Spring Boot). Foco em integração CarPlay/Android Auto e arquiteturas escaláveis em nuvem.",
+        "duko": "CRM & Growth Consultant — Duko (2023-2024)",
+        "duko_desc": "Estrategista técnico em ecossistemas Salesforce e Azure Cloud, desenvolvendo soluções de automação e growth marketing com JS/TS.",
+        "embrapii": "Embedded Systems Intern — EMBRAPII (2022-2023)",
+        "embrapii_desc": "Desenvolvimento de sistemas distribuídos e IoT para monitoramento de plantas solares em tempo real. Especialista em comunicação sem fio via brokers (MQTT/AMQP).",
+        "freelance": "Freelance Developer (2020-Current)",
+        "freelance_desc": "Desenvolvimento de soluções personalizadas em React, React Native, Node.js e Python, com foco em arquiteturas escaláveis."
+      },
+      "mobile": {
+        "title": "Especialista Mobile: Construindo Pontes entre Nativo e Híbrido.",
+        "p1": "Minha expertise em Mobile reside na habilidade de extrair o máximo de performance de frameworks como <0>React Native</0> enquanto integro funcionalidades nativas avançadas em <0>SwiftUI</0> e <0>Kotlin</0>.",
+        "p2": "Tenho experiência robusta em implementações industriais, como integração total com <0>CarPlay</0> e <0>Android Auto</0>, garantindo uma experiência de usuário contínua em ambientes de frota e logística.",
+        "p3": "Domínio completo do ecossistema <0>Expo</0> e <0>Metro Bundler</0> para entregas ágeis e consistentes em ambientes globais."
+      },
+      "web": {
+        "title": "Arquitetura Web: Sistemas Escaláveis, Resilientes e Modernos.",
+        "p1": "Desenvolvo sistemas robustos utilizando <0>Java com Spring Boot</0> e <0>TypeScript com React/Next.js</0>. Minha abordagem prioriza a segurança, a escalabilidade horizontal e o monitoramento em tempo real.",
+        "p2": "Experiência profunda em orquestração de containers com <0>Docker e Kubernetes</0> (EKS/AKS), além de gestão de dados complexos com PostgreSQL, MongoDB e Redis.",
+        "p3": "Implementação de microsserviços resilientes utilizando mensageria assíncrona para sistemas que não podem falhar."
+      },
+      "embedded": {
+        "title": "Sistemas Embarcados & Hardware: Onde o Código encontra o Físico.",
+        "p1": "Através da EMBRAPII, desenvolvi algoritmos embarcados em <0>C++</0> para usinas solares, lidando com protocolos de comunicação industrial e integração direta entre software e sensores.",
+        "p2": "Minha base em pesquisa aeroelástica (Avoante Aeromec) me possibilitou dominar simulações complexas e processamento de dados científicos em <0>Python</0>.",
+        "p3": "Sou um profissional que transita fluidamente entre o bare-metal e as aplicações de alto nível, mantendo sempre o rigor fundamentado na engenharia."
+      }
+    },
+    "labels": {
+      "photo_label": "© 2026—SANTHIAGO",
+      "download_cv": "DOWNLOAD_RESOURCE_CV.PDF",
+      "navigation": "./navigation"
+    }
+  },
+  "home": {
+    "welcome": {
+      "greeting": "Bem vindos, Indigo Dev.",
+      "time_intro": "Essa é uma ótima ",
+      "time_outro": " para estudar? Fica de olho nas novas.",
+      "p1": "Desejo-te boas vindas à minha humilde casa virtual, onde deixo todas as minhas evoluções como programador, desde portfólio a artigos científicos das mais diversas áreas. Programação, matemática, física, dicas que posso oferecer, até mesmo pitacos em aeronáutica.",
+      "p2": "Aqui você pode também organizar suas horas de estudos, com metodologias de estudos rápido, como pomodoro, listagem de categorias e afins. Dá uma conferida, colega!",
+      "cta": "Começar",
+      "times": {
+        "morning": "manhã",
+        "afternoon": "tarde",
+        "evening": "noite"
+      }
+    },
+    "hero": {
+      "line1": "Oi! Não vi você aí.",
+      "line2": "Tudo bem?",
+      "author": "San Thiago"
+    },
+    "projects": {
+      "title": "<Projetos />",
+      "bio": "Bem-vindo à área de projetos e desenvolvimento do Indigo. Aqui você encontrará uma coleção dos meus experimentos criativos e produtos em MVP, demonstrando a evolução das minhas stacks e propostas de interfaces modernas.",
+      "cta": "Confira"
+    },
+    "news": {
+      "title": "<Novidades />",
+      "cta": "Próximo",
+      "articles": {
+        "mobile": {
+          "title": "React Native: Futuro do Mobile",
+          "desc": "Descrição Padrão",
+          "tag": "Mobile"
+        },
+        "clean_code": {
+          "title": "Código Limpo, assim como você",
+          "desc": "Por que estamos falando tanto sobre código limpo (Clean Code) e por que isto é tão importante para nós? De fato a manutenção de um software é tão importante quanto sua construção.",
+          "tag": "Tag"
+        }
+      }
+    }
+  },
+  "footer": {
+    "description": "Desenvolvido com precisão técnica e paixão pela excelência.",
+    "columns": {
+      "contacts": {
+        "title": "Contatos",
+        "email": "Email",
+        "whatsapp": "Whatsapp",
+        "linkedin": "LinkedIn",
+        "github": "Github",
+        "instagram": "Instagram"
+      },
+      "portfolio": {
+        "title": "Portifólio",
+        "presentation": "Apresentação",
+        "resume": "Currículo",
+        "apps": "Aplicações",
+        "certificates": "Certificados"
+      },
+      "policies": {
+        "title": "Políticas",
+        "terms": "Termos de Uso"
+      }
+    }
+  }
+}

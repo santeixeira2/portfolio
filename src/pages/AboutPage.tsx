@@ -1,7 +1,10 @@
 import { Navbar } from '../components/Navbar/Navbar';
 import { Footer } from '../components/Footer/Footer';
 import { ScrollVideo } from '../components/ScrollVideo/ScrollVideo';
+import avatarImg from '../assets/images/avatar.png';
+import cvPdf from '../assets/San_Thiago_Teixeira_CV_EN.docx (1).pdf';
 import { useState, useEffect } from 'react';
+import { useTranslation, Trans } from 'react-i18next';
 
 function TypewriterTitle({ line1, line2 }: { line1: string, line2: string }) {
   const [displayed1, setDisplayed1] = useState('');
@@ -27,9 +30,7 @@ function TypewriterTitle({ line1, line2 }: { line1: string, line2: string }) {
       }
     };
 
-    // slight delay before starting to type
     timeoutId = window.setTimeout(typeWriter, 150);
-
     return () => window.clearTimeout(timeoutId);
   }, [line1, line2]);
 
@@ -43,34 +44,18 @@ function TypewriterTitle({ line1, line2 }: { line1: string, line2: string }) {
   );
 }
 
-const ReactIcon = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <circle cx="12" cy="12" r="2" />
-    <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(30 12 12)" />
-    <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(90 12 12)" />
-    <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(150 12 12)" />
-  </svg>
-);
-
-const LeafIcon = () => (
-  // using lucide-react equivalent for spring boot representation
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4ade80" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M11 20A7 7 0 0 1 9 9V2a7 7 0 0 1 7 7v7" />
-    <path d="M11 20A7 7 0 0 0 9 9h9" />
-  </svg>
-);
-
-const CoffeeIcon = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ef4444" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M18 8h1a4 4 0 0 1 0 8h-1" />
-    <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z" />
-    <line x1="6" y1="1" x2="6" y2="4" />
-    <line x1="10" y1="1" x2="10" y2="4" />
-    <line x1="14" y1="1" x2="14" y2="4" />
-  </svg>
-);
-
 export default function AboutPage() {
+  const { t } = useTranslation();
+  const [activeSection, setActiveSection] = useState<'bio' | 'exp' | 'mobile' | 'web' | 'embedded'>('bio');
+
+  const SECTIONS_METADATA = [
+    { key: 'bio', id: '0x00', labelKey: 'quem_sou_eu' },
+    { key: 'exp', id: '0x01', labelKey: 'experiencias' },
+    { key: 'mobile', id: '0x02', labelKey: 'mobile_dev' },
+    { key: 'web', id: '0x03', labelKey: 'web_apps' },
+    { key: 'embedded', id: '0x04', labelKey: 'embedded_sys' },
+  ] as const;
+
   return (
     <div className="about-page">
       <Navbar />
@@ -78,65 +63,100 @@ export default function AboutPage() {
       <div className="about-page__hero">
         <ScrollVideo>
           {(progress) => {
-             let t1 = "Me chamo";
-             let t2 = "San Thiago Teixeira.";
-             if (progress >= 0.66) {
-               t1 = "E eu resolvo";
-               t2 = "o SEU problema.";
-             } else if (progress >= 0.33) {
-               t1 = "Sou engenheiro";
-               t2 = "de software.";
-             }
-             
-             return (
-               <div className="about-page__hero-overlay">
-                 <TypewriterTitle line1={t1} line2={t2} />
-               </div>
-             );
+            let t1 = t('navbar.me_chamo');
+            let t2 = t('navbar.san_thiago');
+            
+            if (progress >= 0.66) {
+              t1 = t('navbar.e_eu_resolvo');
+              t2 = t('navbar.o_seu_problema');
+            } else if (progress >= 0.33) {
+              t1 = t('navbar.sou_engenheiro');
+              t2 = t('navbar.de_software');
+            }
+
+            return (
+              <div className="about-page__hero-overlay">
+                <TypewriterTitle line1={t1} line2={t2} />
+              </div>
+            );
           }}
         </ScrollVideo>
       </div>
 
       <div className="about-page__split">
-        <div className="about-page__split-top">
-          <div className="container">
-            <h1 className="about-page__split-header">Desenvolvimento Web</h1>
-            <div className="about-page__tech-stack">
-              <div className="about-page__tech-icon"><LeafIcon /></div>
-              <div className="about-page__tech-icon"><CoffeeIcon /></div>
-              <div className="about-page__tech-icon" style={{color: '#61dafb'}}><ReactIcon /></div>
-              <div className="about-page__tech-icon" style={{color: '#3178c6', fontWeight: 900, fontFamily: 'sans-serif'}}>TS</div>
-              <div className="about-page__tech-icon" style={{color: '#f7df1e', fontWeight: 900, fontFamily: 'sans-serif'}}>JS</div>
+        <div className="about-page__split-bottom">
+          <div className="container about-page__content-grid">
+            <aside className="about-page__sidebar">
+              <nav className="sidebar-nav">
+                <div className="sidebar-header">{t('about.labels.navigation')}</div>
+                <ul className="sidebar-list">
+                  {SECTIONS_METADATA.map((section) => (
+                    <li
+                      key={section.key}
+                      className={`sidebar-item ${activeSection === section.key ? 'active' : ''}`}
+                      onClick={() => setActiveSection(section.key)}
+                    >
+                      <span className="sidebar-code">[{section.id}]</span> {t(`navbar.links.${section.labelKey}`)}
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            </aside>
+
+            <div className="about-page__editorial-wrapper">
+              <div className="about-page__photo-frame">
+                <img src={avatarImg} alt="San Thiago Teixeira" className="about-page__full-photo" />
+                <div className="photo-label">{t('about.labels.photo_label')}</div>
+              </div>
+
+              <div className="about-page__bio-overlay">
+                <div className="bio-overlay__content transition-fade" key={activeSection}>
+                  <p className="bio-lead">
+                    {t(`about.sections.${activeSection}.title`)}
+                  </p>
+                  <div className="bio-text">
+                    {activeSection === 'exp' ? (
+                      <>
+                        <p>
+                          <Trans i18nKey="about.sections.exp.psi" components={[<strong />]} /><br/>
+                          <Trans i18nKey="about.sections.exp.psi_desc" />
+                        </p>
+                        <p>
+                          <Trans i18nKey="about.sections.exp.duko" components={[<strong />]} /><br/>
+                          <Trans i18nKey="about.sections.exp.duko_desc" />
+                        </p>
+                        <p>
+                          <Trans i18nKey="about.sections.exp.embrapii" components={[<strong />]} /><br/>
+                          <Trans i18nKey="about.sections.exp.embrapii_desc" />
+                        </p>
+                        <p>
+                          <Trans i18nKey="about.sections.exp.freelance" components={[<strong />]} /><br/>
+                          <Trans i18nKey="about.sections.exp.freelance_desc" />
+                        </p>
+                      </>
+                    ) : (
+                      <>
+                        <p>
+                          <Trans i18nKey={`about.sections.${activeSection}.p1`} components={[<span className="highlight" />, <strong />]} />
+                        </p>
+                        <p>
+                          <Trans i18nKey={`about.sections.${activeSection}.p2`} components={[<span className="highlight" />, <strong />, <br />]} />
+                        </p>
+                        <p>
+                          <Trans i18nKey={`about.sections.${activeSection}.p3`} components={[<span className="highlight" />, <strong />]} />
+                        </p>
+                      </>
+                    )}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="about-page__split-bottom">
-          <div className="container about-page__content">
-            <div className="about-page__avatar">
-              {/* Avatar image will go here, currently a gray circle placeholder in CSS */}
-            </div>
-            <div className="about-page__bio">
-              <p>
-                Sou um programador, amante do progresso e admirador de muitos esportistas,
-                pois neles, vejo a vontade de sempre melhorar. Hoje sou estudante de Ciência da
-                Computação no Instituto Federal do Ceará. Almejo a consistência nos estudos,
-                na academia (tanto física quanto institucional) e na vida.
-              </p>
-              <p>
-                Vim da engenharia, onde cursei durante 2 anos e meio Engenharia Metalúrgica e
-                um ano Engenharia Mecânica. Não me considero um profissional que mudou de
-                carreira, mas que se encontrou dentro do desenvolvimento de softwares, onde
-                contarei como:
-              </p>
-              <p>
-                Dentro da universidade Federal do Ceará, participei de um projeto de extensão
-                chamado Avoante Aeromec Aerodesign, onde fui líder do subsistema de Cargas
-                e Aeroelasticidade, o que me fez aprimorar diversas qualidades em Soft-skills,
-                como trabalhar em equipe dentro de metodologias ageis, lidar com dead-lines e
-                principalmente a coordenar um time para um fim comum.
-              </p>
-            </div>
+          <div className="container about-page__actions">
+            <a href={cvPdf} download="San_Thiago_Teixeira_CV.pdf" className="cv-download-btn">
+              <span className="btn-icon">↓</span> {t('about.labels.download_cv')}
+            </a>
           </div>
         </div>
       </div>

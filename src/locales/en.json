@@ -1,0 +1,126 @@
+{
+  "navbar": {
+    "me_chamo": "My name is",
+    "san_thiago": "San Thiago Teixeira.",
+    "sou_engenheiro": "I am a",
+    "de_software": "software engineer.",
+    "e_eu_resolvo": "And I solve",
+    "o_seu_problema": "YOUR problem.",
+    "links": {
+      "quem_sou_eu": "who_am_i.md",
+      "experiencias": "experiences.log",
+      "mobile_dev": "mobile_dev.src",
+      "web_apps": "web_apps.tsx",
+      "embedded_sys": "embedded_sys.cpp"
+    }
+  },
+  "about": {
+    "sections": {
+      "bio": {
+        "title": "Software Engineer with roots in traditional engineering and a focus on high-impact solutions.",
+        "p1": "My journey began in Engineering, where for 5 years I developed the analytical rigor that I apply to software development today. I discovered my true vocation at the intersection of technical precision and digital creation.",
+        "p2": "Currently, I work as a Software Engineer at <1>Pressure Systems International</1>, focusing on mobile development with React Native, SwiftUI and Kotlin, in addition to full-stack solutions with Java/Spring Boot and cloud architectures (AWS/Azure).",
+        "p3": "Whether leading aeroelasticity systems in the Avoante Aeromec project or integrating hardware and firmware at EMBRAPII, my commitment is to consistency, continuous learning, and technical excellence."
+      },
+      "exp": {
+        "title": "Professional Trajectory: From Critical Systems to High-Performance Mobile.",
+        "psi": "Software Engineer — Pressure Systems International (2023-Present)",
+        "psi_desc": "Technical leadership in Mobile development (React Native, SwiftUI, Kotlin) and Full-stack (Java/Spring Boot). Focus on CarPlay/Android Auto integration and scalable cloud architectures.",
+        "duko": "CRM & Growth Consultant — Duko (2023-2024)",
+        "duko_desc": "Technical strategist in Salesforce and Azure Cloud ecosystems, developing automation and growth marketing solutions with JS/TS.",
+        "embrapii": "Embedded Systems Intern — EMBRAPII (2022-2023)",
+        "embrapii_desc": "Development of distributed systems and IoT for real-time solar plant monitoring. Specialist in wireless communication via brokers (MQTT/AMQP).",
+        "freelance": "Freelance Developer (2020-Present)",
+        "freelance_desc": "Development of customized solutions in React, React Native, Node.js, and Python, with a focus on scalable architectures."
+      },
+      "mobile": {
+        "title": "Mobile Specialist: Building Bridges between Native and Hybrid.",
+        "p1": "My expertise in Mobile lies in the ability to extract maximum performance from frameworks like <0>React Native</0> while integrating advanced native features in <0>SwiftUI</0> and <0>Kotlin</0>.",
+        "p2": "I have robust experience in industrial implementations, such as full integration with <0>CarPlay</0> and <0>Android Auto</0>, ensuring a continuous user experience in fleet and logistics environments.",
+        "p3": "Full mastery of the <0>Expo</0> and <0>Metro Bundler</0> ecosystem for agile and consistent deliveries in global environments."
+      },
+      "web": {
+        "title": "Web Architecture: Scalable, Resilient, and Modern Systems.",
+        "p1": "I develop robust systems using <0>Java with Spring Boot</0> and <0>TypeScript with React/Next.js</0>. My approach prioritizes security, horizontal scalability, and real-time monitoring.",
+        "p2": "Deep experience in container orchestration with <0>Docker and Kubernetes</0> (EKS/AKS), in addition to complex data management with PostgreSQL, MongoDB, and Redis.",
+        "p3": "Implementation of resilient microservices using asynchronous messaging for systems that cannot fail."
+      },
+      "embedded": {
+        "title": "Embedded Systems & Hardware: Where Code meets the Physical.",
+        "p1": "Through EMBRAPII, I developed embedded algorithms in <0>C++</0> for solar plants, dealing with industrial communication protocols and direct integration between software and sensors.",
+        "p2": "My background in aeroelastic research (Avoante Aeromec) allowed me to master complex simulations and scientific data processing in <0>Python</0>.",
+        "p3": "I am a professional who transitions fluidly between bare-metal and high-level applications, always maintaining the rigor founded in engineering."
+      }
+    },
+    "labels": {
+      "photo_label": "© 2026—SANTHIAGO",
+      "download_cv": "DOWNLOAD_RESOURCE_CV.PDF",
+      "navigation": "./navigation"
+    }
+  },
+  "home": {
+    "welcome": {
+      "greeting": "Welcome, Indigo Dev.",
+      "time_intro": "It's a great ",
+      "time_outro": " to study, right? Keep an eye on the news.",
+      "p1": "Welcome to my humble virtual home, where I leave all my developments as a programmer, from portfolio entries to scientific articles in various fields. Programming, mathematics, physics, tips I can offer, even aeronautics insights.",
+      "p2": "Here you can also organize your study hours with fast study methodologies like pomodoro, listing categories, and more. Check it out, colleague!",
+      "cta": "Start",
+      "times": {
+        "morning": "morning",
+        "afternoon": "afternoon",
+        "evening": "evening"
+      }
+    },
+    "hero": {
+      "line1": "Hi! Didn't see you there.",
+      "line2": "How's it going?",
+      "author": "San Thiago"
+    },
+    "projects": {
+      "title": "<Projects />",
+      "bio": "Welcome to Indigo's project and development area. Here you will find a collection of my creative experiments and MVP products, demonstrating the evolution of my stacks and modern interface proposals.",
+      "cta": "Check it out"
+    },
+    "news": {
+      "title": "<News />",
+      "cta": "Next",
+      "articles": {
+        "mobile": {
+          "title": "React Native: The Future is Mobile",
+          "desc": "Default Description",
+          "tag": "Mobile"
+        },
+        "clean_code": {
+          "title": "Clean Code, just like you",
+          "desc": "Why are we talking so much about Clean Code and why is it so important? In fact, software maintenance is as important as its initial construction.",
+          "tag": "Coding"
+        }
+      }
+    }
+  },
+  "footer": {
+    "description": "Developed with technical precision and a passion for excellence.",
+    "columns": {
+      "contacts": {
+        "title": "Contacts",
+        "email": "Email",
+        "whatsapp": "Whatsapp",
+        "linkedin": "LinkedIn",
+        "github": "Github",
+        "instagram": "Instagram"
+      },
+      "portfolio": {
+        "title": "Portfolio",
+        "presentation": "Presentation",
+        "resume": "Resume",
+        "apps": "Applications",
+        "certificates": "Certificates"
+      },
+      "policies": {
+        "title": "Policies",
+        "terms": "Terms of Use"
+      }
+    }
+  }
+}

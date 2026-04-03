@@ -1,20 +1,23 @@
+import { useTranslation } from 'react-i18next';
 import reactNativeImg from '../../assets/images/article-react-native.png';
 import cleanCodeImg from '../../assets/images/article-clean-code.png';
 import { SectionGlow } from '../SectionGlow/SectionGlow';
 
 export function News() {
+  const { t } = useTranslation();
+
   const articles = [
     {
       image: reactNativeImg,
-      title: 'React Native: Futuro do Mobile',
-      desc: 'Default Description',
-      tag: 'Mobile',
+      title: t('home.news.articles.mobile.title'),
+      desc: t('home.news.articles.mobile.desc'),
+      tag: t('home.news.articles.mobile.tag'),
     },
     {
       image: cleanCodeImg,
-      title: 'Código Limpo, assim como você',
-      desc: 'Por que estamos falando tanto sobre código limpo (Clean Code) e por que isto é tão importante para nós? De fato a manutenção de um software é tão importante quanto sua construção.',
-      tag: 'Tag',
+      title: t('home.news.articles.clean_code.title'),
+      desc: t('home.news.articles.clean_code.desc'),
+      tag: t('home.news.articles.clean_code.tag'),
     },
   ];
 
@@ -22,7 +25,7 @@ export function News() {
     <section className="news" id="news">
       <SectionGlow />
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-        <h2 className="news__header animate-on-scroll">&lt;Novidades /&gt;</h2>
+        <h2 className="news__header animate-on-scroll">{t('home.news.title')}</h2>
 
         <div className="news__grid">
           {articles.map((article, i) => (
@@ -40,7 +43,7 @@ export function News() {
         </div>
 
         <div className="news__cta-wrapper animate-on-scroll delay-3">
-          <a href="#" className="news__cta">Próximo</a>
+          <a href="#" className="news__cta">{t('home.news.cta')}</a>
         </div>
       </div>
     </section>

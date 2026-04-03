@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import fluxaAiImg from '../../assets/images/fluxa_ai_app.png';
 import sorriaAiImg from '../../assets/images/sorria_ai_app.png';
 import { IphoneScene } from './IphoneScene';
@@ -9,6 +10,7 @@ import { MacScene } from './MacScene';
 import { SectionGlow } from '../SectionGlow/SectionGlow';
 
 export function HomeProjects() {
+  const { t } = useTranslation();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [activeDevice, setActiveDevice] = useState<'mac' | 'iphone'>('mac');
 
@@ -36,16 +38,13 @@ export function HomeProjects() {
             fontFamily: 'var(--font-mono)',
             fontWeight: 'var(--fw-bold)'
           }}>
-            &lt;Projetos /&gt;
+            {t('home.projects.title')}
           </Link>
         </div>
 
         <div className="about__centered-layout animate-on-scroll delay-1" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', width: '100%', margin: '0 auto' }}>
           <p className="about__bio" style={{ fontSize: '1.3rem', marginBottom: 'var(--space-12)', fontWeight: '300', maxWidth: '900px', margin: '0 auto 4rem auto' }}>
-            Bem-vindo à área de projetos e desenvolvimento do Indigo. Aqui
-            você encontrará uma coleção dos meus experimentos criativos e 
-            produtos em MVP, demonstrando a evolução das minhas stacks e 
-            propostas de interfaces modernas.
+            {t('home.projects.bio')}
           </p>
 
           <div className="about__mac-wrapper" style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
@@ -87,7 +86,7 @@ export function HomeProjects() {
             
             <div style={{ display: 'flex', alignItems: 'center', marginTop: 'var(--space-8)' }}>
               <Button href="/projetos" className="welcome__cta">
-                Confira
+                {t('home.projects.cta')}
               </Button>
             </div>
           </div>
